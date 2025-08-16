@@ -176,7 +176,45 @@
 
 
   <!-- Floating Contact Us -->
-  <a href="contact.html" class="contact-btn">Contact Us</a>
+<a href="#" class="contact-btn" onclick="openContactPanel()">Contact Us</a>
+
+<div id="contact-panel" class="contact-panel">
+  <div class="panel-header">
+    <h2>Contact Us</h2>
+    <span class="close-btn" onclick="closeContactPanel()">&times;</span>
+  </div>
+  <form class="panel-form" id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <div class="panel-socials">
+    <p>Or reach us at:</p>
+    <a href="#">Email</a> |
+    <a href="#">Call</a>
+  </div>
+</div>
+
+<script>
+function openContactPanel() {
+  document.getElementById("contact-panel").classList.add("open");
+}
+
+function closeContactPanel() {
+  document.getElementById("contact-panel").classList.remove("open");
+}
+
+// Handle form submission
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // prevent page reload
+  alert("Your message has been sent! 🐾");
+  // Optionally, clear the form
+  this.reset();
+  // Close the panel
+  closeContactPanel();
+});
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
