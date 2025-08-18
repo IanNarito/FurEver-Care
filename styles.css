@@ -352,3 +352,77 @@ color: #ff6f61;
 .panel-socials a:hover {
   text-decoration: underline;
 }
+
+/* ====== Adoption Section Styles ====== */
+#adoption {
+  background-color: #fffaf5; /* soft pastel background */
+}
+
+#adoption h2 {
+  color: #222;
+  font-weight: 700;
+}
+
+#adoption p {
+  color: #444;
+  line-height: 1.6;
+}
+
+#adoption ul {
+  padding-left: 0;
+}
+
+#adoption ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Buttons */
+#adoption .btn-dark {
+  background-color: #000;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 600;
+}
+
+#adoption .btn-outline-dark {
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 600;
+}
+
+/* Pet Cards */
+#adoption .card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#adoption .card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+#adoption .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#adoption .card-body h6 {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: #28a745; 
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  #adoption {
+    text-align: center;
+  }
+  #adoption ul {
+    text-align: left;
+    display: inline-block;
+  }
+}

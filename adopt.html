@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FurEver Care</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- navbar to beh -->
+  <header class="navbar">
+    <a href="home.html" class="logo">
+      <img src="assets/img/MAINLOGO.jpg" alt="FurEver Care Logo">
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services Offered</a>
+      <a href="appointment.html">Book an Appointment</a>
+      <a href="adopt.html">Adopt a Pet</a>
+      <a href="login.html">Shop</a>
+    </nav>
+  </header>
+
+  <!-- Adoption Section -->
+  <section id="adoption" class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- Adoption Info -->
+        <div class="col-lg-6 mb-4">
+          <h2 class="fw-bold mb-3">Adopt a Shelter Cat or Dog</h2>
+          <p class="mb-4">
+            All of our pets are spayed/neutered (<em>kapon</em>) and vaccinated.  
+            Since many have come from difficult lives, we want to ensure they find safe, loving homes.  
+            Here’s how to adopt:
+          </p>
+          <ul class="list-unstyled mb-4">
+            <li>📄 Submit the adoption application</li>
+            <li>🎥 Attend the Zoom interview</li>
+            <li>🐾 Meet our shelter animals in person</li>
+            <li>💛 Visit and confirm your chosen pet</li>
+            <li>🩺 Wait for vet clearance</li>
+            <li>💵 Pay adoption fee: <strong>₱500 (cat) / ₱1000 (dog)</strong></li>
+            <li>🏡 Take your new best friend home!</li>
+          </ul>
+          <div class="d-flex gap-3">
+            <a href="#" class="btn btn-dark">Apply Now</a>
+            <a href="#" class="btn btn-outline-dark">Adoption FAQ</a>
+          </div>
+        </div>
+
+        <!-- Pets Showcase -->
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-md-4 col-6">
+              <div class="card shadow-sm h-100 text-center">
+                <img src="assets/img/adopt2.png" class="card-img-top" alt="Cat Owen">
+                <div class="card-body p-2">
+                  <h6 class="fw-bold text-success mb-0">OWEN</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-6">
+              <div class="card shadow-sm h-100 text-center">
+                <img src="assets/img/adopt3.png" class="card-img-top" alt="Dog Tiamo">
+                <div class="card-body p-2">
+                  <h6 class="fw-bold text-success mb-0">TIAMO</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-6">
+              <div class="card shadow-sm h-100 text-center">
+                <img src="assets/img/adopt4.png" class="card-img-top" alt="Dog Agie">
+                <div class="card-body p-2">
+                  <h6 class="fw-bold text-success mb-0">AGIE</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Furever Care. All Rights Reserved.</p>
+      <nav class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#why">Why Choose Us</a>
+        <a href="#adoption">Adopt</a>
+        <a href="#comments">Comments</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <!-- Floating Contact Us -->
+<a href="#" class="contact-btn" onclick="openContactPanel()">Contact Us</a>
+
+<div id="contact-panel" class="contact-panel">
+  <div class="panel-header">
+    <h2>Contact Us</h2>
+    <span class="close-btn" onclick="closeContactPanel()">&times;</span>
+  </div>
+  <form class="panel-form" id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <div class="panel-socials">
+    <p>Or reach us at:</p>
+    <a href="#">Email</a> |
+    <a href="#">Call</a>
+  </div>
+</div>
+
+<script>
+function openContactPanel() {
+  document.getElementById("contact-panel").classList.add("open");
+}
+
+function closeContactPanel() {
+  document.getElementById("contact-panel").classList.remove("open");
+}
+
+// Handle form submission
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // prevent page reload
+  alert("Your message has been sent! 🐾");
+  // Optionally, clear the form
+  this.reset();
+  // Close the panel
+  closeContactPanel();
+});
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
