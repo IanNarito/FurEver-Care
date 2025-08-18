@@ -1,173 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form - FurEver Care</title>
-</head>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Sign Up</title>
+  <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-        color: #333333;
-        font-family: sans-serif;
-        width: 100%;
-        height: 100vh;
-        background-image: url('bgfor login.jpg');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .container img {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-        margin-bottom: 20px;
+      font-family: "Segoe UI", sans-serif;
+      background: url('bgfor login.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #222;
     }
 
     .container {
-        width: 400px; 
-        background: linear-gradient(#ffffff34, #ffffff27);
-        backdrop-filter: blur(7px);
-        border: 1px solid #ffffff83;
-        box-shadow: 0 8px 32px #0000008a;
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 15px;
-        text-align: center; 
+      width: 380px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      padding: 40px 30px;
+      border-radius: 16px;
+      text-align: center;
     }
 
-    h1 {
-        margin-bottom: 30px;
-        font-size: 36px;
+    .container h1 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      color: #333;
     }
 
     .form-group {
-        width: 100%;
-        margin-bottom: 20px;
+      margin-bottom: 18px;
+      text-align: left;
     }
 
     .form-group label {
-        font-size: 1rem;
-        color: #333333;
-        display: block;
-        margin-bottom: 8px;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      display: block;
+      color: #333;
     }
 
     .form-group input {
-        width: 100%;
-        height: 45px;
-        outline: none;
-        background-color: #ffffffac;
-        border: 1px solid #aaa8a8;
-        border-radius: 30px;
-        padding: 10px;
-        font-size: 1rem;
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 30px;
+      border: 1px solid #bbb;
+      outline: none;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9);
     }
 
-    .form-group input::placeholder {
-        color: #aaa8a8;
+    .form-group input:focus {
+      border-color: #3ba99c;
+      box-shadow: 0 0 0 2px rgba(59,169,156,0.3);
     }
 
     button {
-        outline: none;
-        border: none;
-        font-size: 1.1rem;
-        padding: 12px 60px;
-        border-radius: 30px;
-        background-color: #3ba99c;
-        color: white;
-        cursor: pointer;
-        margin-top: 20px;
-        transition: 0.6s;
-        align-items: center;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      background: #3ba99c;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
     }
 
     button:hover {
-        background-color: #357a72;
-    }
-
-    a {
-        text-decoration: none;
-        color: #3ba99c;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 15px;
+      background: #2f867b;
     }
 
     p {
-        text-align: center;
-        color: black;
-        margin-top: 15px;
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: #444;
     }
 
-    .form-group input[type="checkbox"] {
-        width: 20px;
-        margin-right: 10px;
+    p a {
+      color: #3ba99c;
+      font-weight: bold;
+      text-decoration: none;
     }
 
-</style>
+    p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
 <body>
+  <div class="container">
+    <h1>Create Account</h1>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+      </div>
 
-    <div class="container">
-        <h1>Registration</h1>
-        <form id="registrationForm">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+      </div>
 
-            <div class="form-group">
-                <label for="fullName"><strong>Full Name:</strong></label>
-                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
-            </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+      </div>
 
-            <div class="form-group">
-                <label for="email"><strong>Email:</strong></label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required>
+      </div>
 
-            <div class="form-group">
-                <label for="phoneNumber"><strong>Number:</strong></label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
-            </div>
+      <button type="submit">Sign Up</button>
 
-            <div class="form-group">
-                <label for="address"><strong>Address:</strong></label>
-                <input type="text" id="address" name="address" placeholder="Enter your address" required>
-            </div>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </div>
 
-            <div class="form-group">
-                <label for="password"><strong> Password: </strong></label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
+  <script>
+    const form = document.getElementById("signupForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
 
-            <div class="form-group">
-                <label for="confirmPassword"><strong>Confirm Password:</strong></label>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
-            </div>
+      if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
 
-            <button type="submit">Submit</button>
-
-            <p>Already have an account? <a href="login.html">Login</a></p>
-        </form>
-    </div>
-    
-<script>
-const registrationForm = document.getElementById('registrationForm');
-
-registrationForm.addEventListener('submit', (event) => {
-  event.preventDefault(); 
-  alert('Registration Successfully Submitted!');
-  registrationForm.submit();
-});
-
-    </script>
-    
+      alert("Registration successful!");
+      form.submit();
+    });
+  </script>
 </body>
 </html>
