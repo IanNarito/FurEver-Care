@@ -138,18 +138,15 @@
             <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
         </form>
     </div>
-<script>
     
-const registrationForm = document.getElementById('registrationForm');
-
-
+<script>
 const loginForm = document.getElementById('loginForm');
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault(); 
   alert('Login Successfully Submitted!');
-  loginForm.submit();
+  window.location.href = "shop.html"; 
 });
+</script>
 
-    </script>
 </body>
 </html>
