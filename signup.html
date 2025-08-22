@@ -13,17 +13,17 @@
       box-sizing: border-box;
     }
 
-          body {
-            color: #333333;
-            font-family: sans-serif;
-            width: 100%;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    body {
+      color: #333333;
+      font-family: sans-serif;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     .container {
       width: 380px;
@@ -103,16 +103,28 @@
     p a:hover {
       text-decoration: underline;
     }
+
+    #liveName {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    #feedback {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #2a7a6d;
+    }
   </style>
 </head>
-<body>
-  <body background="assets/img/bgforlogin.jpg"></body>
+<body background="assets/img/bgforlogin.jpg">
   <div class="container">
     <h1>Create Account</h1>
     <form id="signupForm">
       <div class="form-group">
         <label for="fullName">Full Name</label>
         <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+        <p id="liveName"></p> <!-- real-time feedback -->
       </div>
 
       <div class="form-group">
@@ -131,25 +143,63 @@
       </div>
 
       <button type="submit">Sign Up</button>
-
       <p>Already have an account? <a href="login.html">Login</a></p>
     </form>
+
+    <!-- DOM feedback -->
+    <p id="feedback"></p>
   </div>
 
   <script>
     const form = document.getElementById("signupForm");
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const liveName = document.getElementById("liveName");
+    const feedback = document.getElementById("feedback");
+
+    // Real-time name preview
+    fullName.addEventListener("input", () => {
+      liveName.textContent = "Typing: " + fullName.value;
+      console.log("User typing name:", fullName.value);
+    });
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
 
-      if (password !== confirmPassword) {
+      console.log("Form Submitted!");
+      console.log("Full Name:", fullName.value);
+      console.log("Email:", email.value);
+      console.log("Password:", password.value);
+      console.log("Confirm Password:", confirmPassword.value);
+
+      if (password.value !== confirmPassword.value) {
         alert("Passwords do not match!");
+        console.log("Password mismatch!");
         return;
       }
 
-      alert("Registration successful!");
-      form.submit();
+      // Create user object
+      const user = {
+        fullName: fullName.value,
+        email: email.value,
+        status: "registered"
+      };
+      console.log("User object:", user);
+
+      // Show DOM feedback
+      feedback.textContent = `Welcome, ${user.fullName}! Your account has been created.`;
+
+      // Append extra confirmation <p>
+      const confirmMsg = document.createElement("p");
+      confirmMsg.textContent = "Registration successful!";
+      feedback.appendChild(confirmMsg);
+
+      // (simulate redirect to login after 2s)
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 2000);
     });
   </script>
 </body>
