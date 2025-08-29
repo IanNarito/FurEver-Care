@@ -156,14 +156,7 @@
     const email = document.getElementById("email");
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirmPassword");
-    const liveName = document.getElementById("liveName");
     const feedback = document.getElementById("feedback");
-
-    // Real-time name preview
-    fullName.addEventListener("input", () => {
-      liveName.textContent = "Typing: " + fullName.value;
-      console.log("User typing name:", fullName.value);
-    });
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -197,9 +190,9 @@
       feedback.appendChild(confirmMsg);
 
       // (simulate redirect to login after 2s)
-      setTimeout(() => {
-        window.location.href = "login.html";
-      }, 2000);
+     // setTimeout(() => {
+      //  window.location.href = "login.html";
+    //  }, 2000);
     });
   </script>
 </body>
