@@ -1,0 +1,240 @@
+<?php
+include 'db/config.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $confirmPassword = $_POST['confirmPassword'];
+
+    $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
+
+    // Check if password and confirm password match
+    if ($password !== $confirmPassword) {
+        $error = "Passwords do not match.";
+    } else {
+        // Hash the password
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        // Use prepared statement to prevent SQL injection
+        $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $username, $hashedPassword, $email);
+
+        if ($stmt->execute()) {
+            header("Location: login.php?signup=success");
+            exit();
+        } else {
+            $error = "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    }
+}
+?>
+
+<?php if (isset($error)): ?>
+    <div class="error"><?= htmlspecialchars($error); ?></div>
+<?php endif; ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Sign Up - FurEver Care</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      color: #333333;
+      font-family: sans-serif;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 380px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      padding: 40px 30px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .container h1 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      display: block;
+      color: #333;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 30px;
+      border: 1px solid #bbb;
+      outline: none;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-group input:focus {
+      border-color: #3ba99c;
+      box-shadow: 0 0 0 2px rgba(59,169,156,0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      background: #3ba99c;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #2f867b;
+    }
+
+    p {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    p a {
+      color: #3ba99c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+
+    #liveName {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    #feedback {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #2a7a6d;
+    }
+  </style>
+</head>
+<body background="assets/img/bgforlogin.jpg">
+  <div class="container">
+    <h1>Create Account</h1>
+    <?php if (isset($error)) echo "<div class='alert alert-danger'>$error</div>"; ?>
+    <form id="signupForm" method="post">
+      <div class="form-group">
+        <label for="username"><strong>Username</strong></label>
+        <input type="text" id="username" name="username" placeholder="John Doe" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email"><strong>Email Address</strong></label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password"><strong>Password</strong></label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword"><strong>Confirm Password</strong></label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required>
+      </div>
+
+      <button type="submit">Sign Up</button>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </form>
+
+
+    <!-- DOM feedback -->
+  <!--  <p id="feedback"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById("signupForm");
+    const fullName = document.getElementById("fullName");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const feedback = document.getElementById("feedback");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      console.log("Form Submitted!");
+      console.log("Full Name:", fullName.value);
+      console.log("Email:", email.value);
+      console.log("Password:", password.value);
+      console.log("Confirm Password:", confirmPassword.value);
+
+      if (password.value !== confirmPassword.value) {
+        alert("Passwords do not match!");
+        console.log("Password mismatch!");
+        return;
+      }
+
+      // Create user object
+      const user = {
+        fullName: fullName.value,
+        email: email.value,
+        status: "registered"
+      };
+      console.log("User object:", user);
+
+      // Show DOM feedback
+      feedback.textContent = `Welcome, ${user.fullName}! Your account has been created.`;
+
+      // Append extra confirmation <p>
+      const confirmMsg = document.createElement("p");
+      confirmMsg.textContent = "Registration successful!";
+      feedback.appendChild(confirmMsg);
+
+      // (simulate redirect to login after 2s)
+     // setTimeout(() => {
+      //  window.location.href = "login.html";
+    //  }, 2000);
+    });
+  </script>
+    -->
+</body>
+</html>
