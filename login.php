@@ -1,3 +1,49 @@
+<?php
+session_start();
+include 'db/config.php'; 
+
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']); // user's input password
+
+    if (empty($username) || empty($password)) {
+        $error = "Please enter both username and password.";
+    } else {
+        // Prepared statement to check if user exists
+        $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = ?");
+        if ($stmt) {
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $stmt->store_result();
+
+            if ($stmt->num_rows === 1) {
+                $stmt->bind_result($id, $dbUsername, $dbPassword);
+                $stmt->fetch();
+
+                //verify input password vs DB hash
+                if (password_verify($password, $dbPassword)) {
+                    // Login success
+                    $_SESSION['user_id'] = $id;
+                    $_SESSION['username'] = $dbUsername;
+                    header("Location: shop.html");
+                    exit();
+                } else {
+                    $error = "Invalid password.";
+                }
+            } else {
+                $error = "No account found with that username.";
+            }
+
+            $stmt->close();
+        } else {
+            $error = "Something went wrong. Please try again later.";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,7 +179,8 @@
     </a>
     <h1>Login</h1>
 
-    <form id="loginForm">
+
+    <form id="loginForm" method="POST" action="">
       <div class="form-group">
         <label for="username"><strong>Username</strong></label>
         <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -153,7 +200,7 @@
     <p id="feedback"></p>
   </div>
   
-<script>
+<!--<script>
 const loginForm = document.getElementById('loginForm');
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
@@ -196,5 +243,6 @@ loginForm.addEventListener('submit', (event) => {
   }, 2000);
 });
 </script>
+  -->
 </body>
 </html>

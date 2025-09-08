@@ -1,11 +1,11 @@
-<?php
+<?php 
 include 'db/config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirmPassword'];
+    $username         = $_POST['username'];
+    $email            = $_POST['email'];
+    $password         = $_POST['password'];
+    $confirmPassword  = $_POST['confirmPassword'];
 
     // Check if password and confirm password match
     if ($password !== $confirmPassword) {
@@ -31,8 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <?php if (isset($error)): ?>
-    <div class="error"><?= htmlspecialchars($error); ?></div>
-<?php endif; ?> 
+    <div class="error">
+        <?= htmlspecialchars($error); ?>
+    </div>
+<?php endif; ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -191,7 +194,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Only stop submission if passwords don't match
       if (password.value !== confirmPassword.value) {
         e.preventDefault();
-        feedback.textContent = "❌ Passwords do not match!";
+        feedback.textContent = " Passwords do not match!";
         feedback.style.color = "red";
       }
     });
