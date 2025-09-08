@@ -195,6 +195,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <button type="submit">Log In</button>
       <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
     </form>
+      <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($error)): ?>
+        <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
+      <?php endif; ?>
 
     <!-- DOM feedback will appear here -->
     <p id="feedback"></p>
