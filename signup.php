@@ -4,10 +4,8 @@ include 'db/config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
-
-    $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
 
     // Check if password and confirm password match
     if ($password !== $confirmPassword) {
@@ -34,8 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php if (isset($error)): ?>
     <div class="error"><?= htmlspecialchars($error); ?></div>
-<?php endif; ?>
-
+<?php endif; ?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -143,12 +140,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       text-decoration: underline;
     }
 
-    #liveName {
-      margin-top: 8px;
-      font-size: 0.9rem;
-      color: #555;
-    }
-
     #feedback {
       margin-top: 15px;
       font-weight: bold;
@@ -160,7 +151,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="container">
     <h1>Create Account</h1>
     <?php if (isset($error)) echo "<div class='alert alert-danger'>$error</div>"; ?>
-    <form id="signupForm" method="post">
+    
+    <form id="signupForm" method="post" action="">
       <div class="form-group">
         <label for="username"><strong>Username</strong></label>
         <input type="text" id="username" name="username" placeholder="John Doe" required>
@@ -182,59 +174,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
 
       <button type="submit">Sign Up</button>
-      <p>Already have an account? <a href="login.html">Login</a></p>
+      <p>Already have an account? <a href="login.php">Login</a></p>
     </form>
 
-
     <!-- DOM feedback -->
-  <!--  <p id="feedback"></p>
+    <p id="feedback"></p>
   </div>
 
   <script>
     const form = document.getElementById("signupForm");
-    const fullName = document.getElementById("fullName");
-    const email = document.getElementById("email");
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirmPassword");
     const feedback = document.getElementById("feedback");
 
     form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      console.log("Form Submitted!");
-      console.log("Full Name:", fullName.value);
-      console.log("Email:", email.value);
-      console.log("Password:", password.value);
-      console.log("Confirm Password:", confirmPassword.value);
-
+      // Only stop submission if passwords don't match
       if (password.value !== confirmPassword.value) {
-        alert("Passwords do not match!");
-        console.log("Password mismatch!");
-        return;
+        e.preventDefault();
+        feedback.textContent = "❌ Passwords do not match!";
+        feedback.style.color = "red";
       }
-
-      // Create user object
-      const user = {
-        fullName: fullName.value,
-        email: email.value,
-        status: "registered"
-      };
-      console.log("User object:", user);
-
-      // Show DOM feedback
-      feedback.textContent = `Welcome, ${user.fullName}! Your account has been created.`;
-
-      // Append extra confirmation <p>
-      const confirmMsg = document.createElement("p");
-      confirmMsg.textContent = "Registration successful!";
-      feedback.appendChild(confirmMsg);
-
-      // (simulate redirect to login after 2s)
-     // setTimeout(() => {
-      //  window.location.href = "login.html";
-    //  }, 2000);
     });
   </script>
-    -->
 </body>
 </html>
