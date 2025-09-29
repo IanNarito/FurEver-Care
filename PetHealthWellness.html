@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FurEver Health and Wellness Shop</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --main-color: #3ba99c;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--main-color);
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    .card img {
+      height: 180px;
+      object-fit: contain;
+    }
+
+    .shop-section {
+      background-color: #f0f9f8;
+    }
+
+    footer.site-footer {
+      background-color: var(--main-color);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .footer-nav a {
+      color: #e1e1e1;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="home.html" class="logo">
+      <img src="assets/img/MAINLOGO.jpg" alt="FurEver Care Logo" />
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services Offered</a>
+      <a href="appointment.html">Book an Appointment</a>
+      <a href="adopt.html">Adopt a Pet</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+
+  <!-- Shop by Category -->
+  <section class="py-4" style="background-color: #e1efed;">
+    <div class="container text-center">
+      <h2 class="mb-4 fw-bold">Shop by Category</h2>
+      <div class="row justify-content-center g-4">
+        
+        <!-- Category 1 -->
+        <div class="col-6 col-md-2">
+          <a href="toys.html" class="text-decoration-none text-dark">
+            <div class="category-card bg-white p-3 shadow-sm rounded">
+              <h6>Toys</h6>
+            </div>
+          </a>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="col-6 col-md-2">
+          <a href="food.html" class="text-decoration-none text-dark">
+            <div class="category-card bg-white p-3 shadow-sm rounded">
+              <h6>Food</h6>
+            </div>
+          </a>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="col-6 col-md-2">
+          <a href="clothes.html" class="text-decoration-none text-dark">
+            <div class="category-card bg-white p-3 shadow-sm rounded">
+              <h6>Accessories</h6>
+            </div>
+          </a>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="col-6 col-md-2">
+          <a href="PetHealthWellness.html" class="text-decoration-none text-dark">
+            <div class="category-card bg-white p-3 shadow-sm rounded">
+              <h6>Pet Health & Wellness</h6>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Toys Shop Section -->
+  <section class="py-5 shop-section">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">Pet Health and Wellness</h2>
+
+      <div class="row g-4">
+
+        <!-- Toy 1 -->
+  <div class="col-6 col-md-3">
+    <a href="#" class="text-decoration-none product-card">
+      <div class="card shadow-sm h-100 text-center">
+        <img src="assets/img/Inhancer Hip and Joint Formula Dog Supplement 340g.png" class="card-img-top" alt="Inhancer Hip and Joint Formula Dog Supplement 340g">
+        <div class="card-body">
+          <h6 class="fw-bold text-dark">Inhancer Hip and Joint Formula Dog Supplement 340g</h6>
+          <p class="text-muted mb-1">₱699</p>
+          <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+        </div>
+      </div>
+    </a>
+  </div>
+
+        <!-- Toy 2 -->
+        <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none product-card"></a>
+          <div class="card shadow-sm h-100">
+            <img src="assets/img/Floof Pets 8-in-1 Probiotic and Multivitamins Cat Supplement 160s 210g.png" class="card-img-top" alt="Floof Pets 8-in-1 Probiotic and Multivitamins Cat Supplement 160s 210g" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold">Floof Pets 8-in-1 Probiotic and Multivitamins Cat Supplement 160s 210g</h6>
+              <p class="text-muted mb-1">₱599</p>
+              <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toy 3 -->
+        <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none product-card"></a>
+          <div class="card shadow-sm h-100">
+            <img src="assets/img/Floof Pets Dental Drops Water Additive For Oral Care Solutions 250ml.png" class="card-img-top" alt="Floof Pets Dental Drops Water Additive For Oral Care Solutions 250ml" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold">Floof Pets Dental Drops Water Additive For Oral Care Solutions 250ml</h6>
+              <p class="text-muted mb-1">₱399</p>
+              <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toy 4 -->
+        <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none product-card"></a>
+          <div class="card shadow-sm h-100">
+            <img src="assets/img/Floof Pets Senior Probiotic and Multivitamins Dog Supplement 75g.png" class="card-img-top" alt="Floof Pets Senior Probiotic and Multivitamins Dog Supplement 75g" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold">Floof Pets Senior Probiotic and Multivitamins Dog Supplement 75g</h6>
+              <p class="text-muted mb-1">₱499</p>
+              <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toy 5 -->
+        <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none product-card"></a>
+          <div class="card shadow-sm h-100">
+            <img src="assets/img/Dr. Shiba Wild Salmon Oil Pet Supplement 200ml.png" class="card-img-top" alt="Dr. Shiba Wild Salmon Oil Pet Supplement 200ml" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold">Dr. Shiba Wild Salmon Oil Pet Supplement 200ml</h6>
+              <p class="text-muted mb-1">₱500</p>
+              <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toy 6 -->
+        <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none product-card"></a>
+          <div class="card shadow-sm h-100">
+            <img src="assets/img/Happy Life Wound and Skin Pet Spray 120ml.png" class="card-img-top" alt="Happy Life Wound and Skin Pet Spray 120ml" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold">Happy Life Wound and Skin Pet Spray 120ml</h6>
+              <p class="text-muted mb-1">₱349</p>
+              <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toy 7 -->
+        <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none product-card"></a>
+          <div class="card shadow-sm h-100">
+            <img src="assets/img/Harley's Diatomaceous Earth Meal Topper Pet Supplement.png" class="card-img-top" alt="Harley's Diatomaceous Earth Meal Topper Pet Supplement" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold">Harley's Diatomaceous Earth Meal Topper Pet Supplement</h6>
+              <p class="text-muted mb-1">₱449</p>
+              <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toy 8 -->
+        <div class="col-6 col-md-3">
+            <a href="#" class="text-decoration-none product-card"></a>
+          <div class="card shadow-sm h-100">
+            <img src="assets/img/Catsan Ultra Odor Control Formula Cat Litter 10L.png" class="card-img-top" alt="Catsan Ultra Odor Control Formula Cat Litter 10L" />
+            <div class="card-body text-center">
+              <h6 class="fw-bold">Catsan Ultra Odor Control Formula Cat Litter 10L</h6>
+              <p class="text-muted mb-1">₱1099</p>
+              <button class="btn btn-sm btn-outline-success">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer mt-5">
+    <div class="container">
+      <p>&copy; 2025 FurEver Care. All Rights Reserved.</p>
+      <nav class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#why">Why Choose Us</a>
+        <a href="#adoption">Adopt</a>
+        <a href="#comments">Comments</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
