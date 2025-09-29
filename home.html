@@ -18,7 +18,9 @@
       <a href="#services">Services Offered</a>
       <a href="appointment.html">Book an Appointment</a>
       <a href="adopt.html">Adopt a Pet</a>
-      <a href="login.html">Shop</a>
+      <a href="login.php">Shop</a>
+      <a href="signup.php">Sign up</a>
+      <a href="login.php">Login</a>
     </nav>
   </header>
 
@@ -76,7 +78,7 @@
       <div class="card">
         <img src="assets/img/vetcare.png" alt="vet">
         <h3>Veterinary Care</h3>
-        <a href="assets/img/appointment.html" class="btn-primary">Book an Appointment</a>
+        <a href="appointment.html" class="btn-primary">Book an Appointment</a>
       </div>
       <div class="card">
         <img src="assets/img/adopt.png" alt="adopt">
@@ -154,8 +156,10 @@
   <!-- ito yung form for comment/ suggestion thingy -->
   <section id="comments" class="section alt-bg">
     <h2>Comments & Suggestions</h2>
-    <form class="comment-form">
+    <form class="comment-form" action="php/sample_mail.php" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
       <textarea name="message" rows="4" placeholder="Your Comment..." required></textarea>
       <button type="submit" class="btn-primary">Submit</button>
     </form>
