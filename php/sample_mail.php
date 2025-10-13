@@ -16,13 +16,13 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'iannarito116@gmail.com';
+    $mail->Username   = '';
     $mail->Password   = ''; 
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
     $mail->Port       = 587;
 
-    $mail->setFrom('iannarito116@gmail.com', 'Mailer');
-    $mail->addAddress('micnarito@tip.edu.ph'); 
+    $mail->setFrom('', 'Mailer');
+    $mail->addAddress(''); 
 
         // Content
     $mail->isHTML(true);
@@ -40,3 +40,4 @@ try {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 }
+
