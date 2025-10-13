@@ -18,7 +18,7 @@
       <a href="#services">Services Offered</a>
       <a href="appointment.html">Book an Appointment</a>
       <a href="adopt.html">Adopt a Pet</a>
-      <a href="login.php">Shop</a>
+      <a href="shop.html">Shop</a>
       <a href="signup.php">Sign up</a>
       <a href="login.php">Login</a>
     </nav>
@@ -176,11 +176,9 @@ function closeContactPanel() {
 
 // Handle form submission
 document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // prevent page reload
+  event.preventDefault(); 
   alert("Your message has been sent! 🐾");
-  // Optionally, clear the form
   this.reset();
-  // Close the panel
   closeContactPanel();
 });
 </script>

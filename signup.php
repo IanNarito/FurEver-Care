@@ -74,42 +74,7 @@ $conn->close();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  
-  <style>
-    body {
-      background-color: #f8f9fa; 
-    }
-    
-    .main-container {
-      display: flex;
-      min-height: calc(100vh - 76px); /* Full height minus navbar height */
-      align-items: center;
-      justify-content: center;
-      background-size: cover;
-    }
-
-    .signup-panel {
-      max-width: 900px;
-      width: 100%;
-    }
-
-    .form-container {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      border-radius: 0 .5rem .5rem 0;
-    }
-
-    .image-container {
-      background: url('https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?q=80&w=2080&auto=format&fit=crop') no-repeat center center;
-      background-size: cover;
-      border-radius: .5rem 0 0 .5rem;
-    }
-
-    @media (max-width: 767.98px) {
-      .image-container { display: none; }
-      .form-container { border-radius: .5rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/signup.css">
 </head>
 <body>
 
@@ -121,7 +86,7 @@ $conn->close();
       <a href="#services">Services Offered</a>
       <a href="appointment.html">Book an Appointment</a>
       <a href="adopt.html">Adopt a Pet</a>
-      <a href="login.php">Shop</a>
+      <a href="shop.html">Shop</a>
       <a href="signup.php">Sign up</a>
       <a href="login.php">Login</a>
     </nav>

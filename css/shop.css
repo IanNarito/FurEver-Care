@@ -1,0 +1,41 @@
+    :root {
+      --main-color: #3ba99c;
+    }
+    .logo img {
+      height: 80px;
+    }
+
+    .category-card img {
+      max-height: 80px;
+      object-fit: contain;
+    }
+
+    .category-card {
+      transition: transform 0.2s ease;
+    }
+
+    .category-card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      max-height: 180px;
+      object-fit: contain;
+    }
+
+    footer.site-footer {
+      background-color: var(--main-color);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .footer-nav a {
+      color: #e1e1e1;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+    }
