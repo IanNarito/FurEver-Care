@@ -83,6 +83,7 @@ $conn->close();
       <img src="assets/img/MAINLOGO.jpg" alt="FurEver Care Logo">
     </a>
     <nav class="nav-links">
+      <a href="home.html">Home</a>
       <a href="#services">Services Offered</a>
       <a href="appointment.html">Book an Appointment</a>
       <a href="adopt.html">Adopt a Pet</a>

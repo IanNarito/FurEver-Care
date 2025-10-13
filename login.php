@@ -17,32 +17,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($username) || empty($password)) {
             $error = "Please enter both username and password.";
         } else {
-            $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = ? LIMIT 1");
-            if ($stmt) {
-                $stmt->bind_param("s", $username);
-                $stmt->execute();
-                $stmt->store_result();
+          $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = ? LIMIT 1");
+          if ($stmt) {
+              $stmt->bind_param("s", $username);
+              $stmt->execute();
+              $stmt->store_result();
 
-                if ($stmt->num_rows === 1) {
-                    $stmt->bind_result($id, $dbUsername, $dbPasswordHash);
-                    $stmt->fetch();
+              if ($stmt->num_rows === 1) {
+                  $stmt->bind_result($id, $dbUsername, $dbPasswordHash);
+                  $stmt->fetch();
 
-                    if (password_verify($password, $dbPasswordHash)) {
-                        session_regenerate_id(true); 
-
-                        $_SESSION['user_id'] = $id;
-                        $_SESSION['username'] = $dbUsername;
-                        header("Location: shop.html");
-                        exit();
-                    }
-                }
-                $error = "Invalid username or password.";
-                $stmt->close();
-            } else {
-                // Database or statement preparation error
-                error_log("MySQLi prepare failed: " . $conn->error); 
-                $error = "An unexpected error occurred. Please try again later.";
-            }
+                  // --- TEMPORARY DEBUGGING ---
+                  // Check if the hash is being retrieved correctly
+                  var_dump($dbPasswordHash); 
+                  
+                  if (password_verify($password, $dbPasswordHash)) {
+                      // Login success (original code)
+                      session_regenerate_id(true); 
+                      $_SESSION['user_id'] = $id;
+                      $_SESSION['username'] = $dbUsername;
+                      header("Location: admin/index.php"); // Make sure this redirects to the admin panel
+                      exit();
+                  } else {
+                      // This will now tell us if the password check itself is the failure point
+                      die("DEBUG: Password does not verify."); 
+                  }
+              } else {
+                  // This tells us if the user wasn't found at all
+                  die("DEBUG: No user found with that username.");
+              }
+          }
         }
     }
 }
@@ -66,6 +70,7 @@ $conn->close();
       <img src="assets/img/MAINLOGO.jpg" alt="FurEver Care Logo">
     </a>
     <nav class="nav-links">
+      <a href="home.html">Home</a>
       <a href="#services">Services Offered</a>
       <a href="appointment.html">Book an Appointment</a>
       <a href="adopt.html">Adopt a Pet</a>
