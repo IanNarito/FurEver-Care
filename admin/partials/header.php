@@ -1,5 +1,4 @@
 <?php
-// This file assumes auth.php has already been included
 $currentPage = basename($_SERVER['SCRIPT_NAME']);
 ?>
 <!DOCTYPE html>
@@ -35,4 +34,4 @@ $currentPage = basename($_SERVER['SCRIPT_NAME']);
     <div class="container-fluid">
         <div class="row">
             <?php include 'sidebar.php'; ?>
-            <main class="main-content col-md-9 ms-sm-auto col-lg-10 px-md-4"></main>
+            <main class="main-content col-md-9 ms-sm-auto col-lg-10 px-md-4">

@@ -4,8 +4,8 @@ require_once 'auth.php'; // Security check
 
 // Fetch stats for the dashboard
 $totalUsers = $conn->query("SELECT COUNT(id) as count FROM users")->fetch_assoc()['count'];
+$pendingAppointments = $conn->query("SELECT COUNT(id) as count FROM appointments WHERE status = 'Pending'")->fetch_assoc()['count'];
 // Assuming you create these tables later:
-// $pendingAppointments = $conn->query("SELECT COUNT(id) as count FROM appointments WHERE status = 'pending'")->fetch_assoc()['count'];
 // $petsForAdoption = $conn->query("SELECT COUNT(id) as count FROM pets WHERE adopted = 0")->fetch_assoc()['count'];
 
 include 'partials/header.php';
@@ -30,7 +30,7 @@ include 'partials/header.php';
         <div class="card text-white bg-warning mb-3">
             <div class="card-header">Pending Appointments</div>
             <div class="card-body">
-                <h5 class="card-title">0 </h5>
+                <h5 class="card-title"><?= $pendingAppointments ?></h5>
                 <p class="card-text">Appointments needing confirmation.</p>
             </div>
         </div>

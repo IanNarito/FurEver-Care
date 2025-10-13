@@ -16,6 +16,11 @@
                     <i class="bi bi-heart-pulse-fill me-2"></i> Manage Services
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link p-3 <?= ($currentPage == 'manage_appointments.php') ? 'active' : ''; ?>" href="manage_appointments.php">
+                  <i class="bi bi-calendar-check-fill me-2"></i> Manage Appointments
+                </a>
+            </li>
             </ul>
     </div>
 </nav>
