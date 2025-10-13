@@ -1,0 +1,52 @@
+    :root {
+      --main-color: #3ba99c;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--main-color);
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    .card img {
+      height: 180px;
+      object-fit: contain;
+    }
+
+    .shop-section {
+      background-color: #f0f9f8;
+    }
+
+    footer.site-footer {
+      background-color: var(--main-color);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .footer-nav a {
+      color: #e1e1e1;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+    }
