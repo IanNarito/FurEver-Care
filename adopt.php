@@ -10,20 +10,7 @@
 <body>
 
   <!-- navbar to beh -->
-  <header class="navbar">
-    <a href="home.html" class="logo">
-      <img src="assets/img/MAINLOGO.jpg" alt="FurEver Care Logo">
-    </a>
-    <nav class="nav-links">
-      <a href="home.html">Home</a>
-      <a href="#services">Services Offered</a>
-      <a href="appointment.html">Book an Appointment</a>
-      <a href="adopt.html">Adopt a Pet</a>
-      <a href="shop.html">Shop</a>
-      <a href="signup.php">Sign up</a>
-      <a href="login.php">Login</a>
-    </nav>
-  </header>
+<?php include 'partials/navbar.php'; ?>
 
   <!-- Adoption Section -->
   <section id="adoption" class="py-5">
@@ -48,7 +35,7 @@
             <li>🏡 Take your new best friend home!</li>
           </ul>
           <div class="d-flex gap-3">
-            <a href="#" class="btn btn-dark">Apply Now</a>
+            <a href="apply.php" class="btn btn-dark">Apply Now</a>
             <a href="#" class="btn btn-outline-dark">Adoption FAQ</a>
           </div>
         </div>
@@ -87,6 +74,68 @@
     </div>
   </section>
 
+  <section id="pet-gallery" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Meet Our Adoptable Pets</h2>
+        <p class="text-muted">Find your new best friend! All our pets are waiting for a loving home.</p>
+      </div>
+
+      <div id="pet-filters" class="d-flex justify-content-center gap-2 mb-4">
+        <button class="btn btn-dark active" data-filter="all">All Pets</button>
+        <button class="btn btn-outline-dark" data-filter="dog">Dogs <i class="bi bi-heart-fill"></i></button>
+        <button class="btn btn-outline-dark" data-filter="cat">Cats <i class="bi bi-heart"></i></button>
+      </div>
+
+      <div class="row g-4" id="pet-list">
+        
+        <div class="col-lg-3 col-md-4 col-6 pet-card" data-type="dog">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?q=80&w=2832&auto=format&fit=crop" class="card-img-top" alt="A happy dog">
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title fw-bold">Buddy</h5>
+              <p class="card-text small text-muted mb-auto">2 y/o | Golden Retriever</p>
+              <a href="apply.php?pet=Buddy" class="btn btn-sm btn-primary mt-3">Adopt Me</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 pet-card" data-type="cat">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1574158622682-e40e6984100d?q=80&w=2933&auto=format&fit=crop" class="card-img-top" alt="A playful cat">
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title fw-bold">Whiskers</h5>
+              <p class="card-text small text-muted mb-auto">1 y/o | Domestic Shorthair</p>
+              <a href="apply.php?pet=Whiskers" class="btn btn-sm btn-primary mt-3">Adopt Me</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-6 pet-card" data-type="dog">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?q=80&w=2787&auto=format&fit=crop" class="card-img-top" alt="A small friendly dog">
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title fw-bold">Max</h5>
+              <p class="card-text small text-muted mb-auto">3 y/o | Beagle</p>
+              <a href="apply.php?pet=Max" class="btn btn-sm btn-primary mt-3">Adopt Me</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-6 pet-card" data-type="cat">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1592194991823-23ae48953097?q=80&w=2787&auto=format&fit=crop" class="card-img-top" alt="A fluffy white cat">
+            <div class="card-body text-center d-flex flex-column">
+              <h5 class="card-title fw-bold">Luna</h5>
+              <p class="card-text small text-muted mb-auto">2 y/o | Persian Mix</p>
+              <a href="apply.php?pet=Luna" class="btn btn-sm btn-primary mt-3">Adopt Me</a>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+    </div>
+  </section>
 
   <section id="testimonials" class="py-5 bg-light">
       <div class="container">
