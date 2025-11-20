@@ -17,20 +17,7 @@
 </head>
 <body>
 
-  <header class="navbar">
-    <a href="home.html" class="logo">
-      <img src="assets/img/MAINLOGO.jpg" alt="FurEver Care Logo" />
-    </a>
-    <nav class="nav-links">
-      <a href="home.html">Home</a>
-      <a href="#services">Services Offered</a>
-      <a href="appointment.html">Book an Appointment</a>
-      <a href="adopt.html">Adopt a Pet</a>
-      <a href="shop.html">Shop</a>
-      <a href="signup.php">Sign up</a>
-      <a href="login.php">Login</a>
-    </nav>
-  </header>
+  <?php include 'partials/navbar.php'; ?>
 
   <section class="py-4" style="background-color: #e1efed;">
     <div class="container text-center">
@@ -38,7 +25,7 @@
       <div class="row justify-content-center g-4">
         
         <div class="col-6 col-md-2">
-          <a href="toys.html" class="text-decoration-none text-dark">
+          <a href="toys.php" class="text-decoration-none text-dark">
             <div class="category-card bg-white p-3 shadow-sm rounded">
               <h6>Toys</h6>
             </div>
@@ -46,7 +33,7 @@
         </div>
 
         <div class="col-6 col-md-2">
-          <a href="food.html" class="text-decoration-none text-dark">
+          <a href="food.php" class="text-decoration-none text-dark">
             <div class="category-card bg-white p-3 shadow-sm rounded">
               <h6>Food</h6>
             </div>
@@ -54,7 +41,7 @@
         </div>
 
         <div class="col-6 col-md-2">
-          <a href="clothes.html" class="text-decoration-none text-dark">
+          <a href="clothes.php" class="text-decoration-none text-dark">
             <div class="category-card bg-white p-3 shadow-sm rounded">
               <h6>Accessories</h6>
             </div>
@@ -62,7 +49,7 @@
         </div>
 
         <div class="col-6 col-md-2">
-          <a href="PetHealthWellness.html" class="text-decoration-none text-dark">
+          <a href="PetHealthWellness.php" class="text-decoration-none text-dark">
             <div class="category-card bg-white p-3 shadow-sm rounded">
               <h6>Pet Health & Wellness</h6>
             </div>
@@ -82,6 +69,7 @@
         <div class="col-6 col-md-3">
           <a href="#" class="text-decoration-none product-card"
              data-bs-toggle="modal" data-bs-target="#productModal"
+             data-id="25"
              data-name="Dinosaur Clothes"
              data-price="₱899"
              data-img="assets/img/dinosaur.png"
@@ -91,7 +79,7 @@
               <div class="card-body">
                 <h6 class="fw-bold text-dark">Dinosaur Clothes</h6>
                 <p class="text-muted mb-1">₱899</p>
-                <button class="btn btn-sm btn-outline-success add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-sm btn-outline-success btn-add-to-cart" data-product-id="25">Add to Cart</button>
               </div>
             </div>
           </a>
@@ -100,6 +88,7 @@
         <div class="col-6 col-md-3">
           <a href="#" class="text-decoration-none product-card"
              data-bs-toggle="modal" data-bs-target="#productModal"
+             data-id="26"
              data-name="Blue Dinosaur Clothes"
              data-price="₱899"
              data-img="assets/img/Blue Dinosaur.png"
@@ -109,7 +98,7 @@
               <div class="card-body text-center">
                 <h6 class="fw-bold">Blue Dinosaur Clothes</h6>
                 <p class="text-muted mb-1">₱899</p>
-                <button class="btn btn-sm btn-outline-success add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-sm btn-outline-success btn-add-to-cart" data-product-id="26">Add to Cart</button>
               </div>
             </div>
           </a>
@@ -118,6 +107,7 @@
         <div class="col-6 col-md-3">
           <a href="#" class="text-decoration-none product-card"
              data-bs-toggle="modal" data-bs-target="#productModal"
+             data-id="27"
              data-name="Pig Clothes"
              data-price="₱899"
              data-img="assets/img/pig.png"
@@ -127,7 +117,7 @@
               <div class="card-body text-center">
                 <h6 class="fw-bold">Pig Clothes</h6>
                 <p class="text-muted mb-1">₱899</p>
-                <button class="btn btn-sm btn-outline-success add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-sm btn-outline-success btn-add-to-cart" data-product-id="27">Add to Cart</button>
               </div>
             </div>
           </a>
@@ -136,6 +126,7 @@
         <div class="col-6 col-md-3">
           <a href="#" class="text-decoration-none product-card"
              data-bs-toggle="modal" data-bs-target="#productModal"
+             data-id="28"
              data-name="Cow Clothes"
              data-price="₱899"
              data-img="assets/img/cow.png"
@@ -145,7 +136,7 @@
               <div class="card-body text-center">
                 <h6 class="fw-bold">Cow Clothes</h6>
                 <p class="text-muted mb-1">₱899</p>
-                <button class="btn btn-sm btn-outline-success add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-sm btn-outline-success btn-add-to-cart" data-product-id="28">Add to Cart</button>
               </div>
             </div>
           </a>
@@ -154,6 +145,7 @@
         <div class="col-6 col-md-3">
           <a href="#" class="text-decoration-none product-card"
              data-bs-toggle="modal" data-bs-target="#productModal"
+             data-id="29"
              data-name="Pikachu Clothes"
              data-price="₱899"
              data-img="assets/img/pikachu.png"
@@ -163,7 +155,7 @@
               <div class="card-body text-center">
                 <h6 class="fw-bold">Pikachu Clothes</h6>
                 <p class="text-muted mb-1">₱899</p>
-                <button class="btn btn-sm btn-outline-success add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-sm btn-outline-success btn-add-to-cart" data-product-id="29">Add to Cart</button>
               </div>
             </div>
           </a>
@@ -172,6 +164,7 @@
         <div class="col-6 col-md-3">
           <a href="#" class="text-decoration-none product-card"
              data-bs-toggle="modal" data-bs-target="#productModal"
+             data-id="30"
              data-name="Totoro Clothes"
              data-price="₱899"
              data-img="assets/img/totoro.png"
@@ -181,7 +174,7 @@
               <div class="card-body text-center">
                 <h6 class="fw-bold">Totoro Clothes</h6>
                 <p class="text-muted mb-1">₱899</p>
-                <button class="btn btn-sm btn-outline-success add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-sm btn-outline-success btn-add-to-cart" data-product-id="30">Add to Cart</button>
               </div>
             </div>
           </a>
@@ -190,6 +183,7 @@
         <div class="col-6 col-md-3">
           <a href="#" class="text-decoration-none product-card"
              data-bs-toggle="modal" data-bs-target="#productModal"
+             data-id="31"
              data-name="Princess Skirt With Cute Bowknot"
              data-price="₱999"
              data-img="assets/img/Princess Skirt With Cute Bowknot.png"
@@ -199,7 +193,7 @@
               <div class="card-body text-center">
                 <h6 class="fw-bold">Princess Skirt With Cute Bowknot</h6>
                 <p class="text-muted mb-1">₱999</p>
-                <button class="btn btn-sm btn-outline-success add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-sm btn-outline-success btn-add-to-cart" data-product-id="31">Add to Cart</button>
               </div>
             </div>
           </a>
@@ -208,6 +202,7 @@
         <div class="col-6 col-md-3">
           <a href="#" class="text-decoration-none product-card"
              data-bs-toggle="modal" data-bs-target="#productModal"
+             data-id="32"
              data-name="Purple Bunny Hat"
              data-price="₱499"
              data-img="assets/img/Purple Bunny Hat.png"
@@ -217,7 +212,7 @@
               <div class="card-body text-center">
                 <h6 class="fw-bold">Purple Bunny Hat</h6>
                 <p class="text-muted mb-1">₱499</p>
-                <button class="btn btn-sm btn-outline-success add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-sm btn-outline-success btn-add-to-cart" data-product-id="32">Add to Cart</button>
               </div>
             </div>
           </a>
@@ -240,7 +235,7 @@
           <p class="text-muted fs-5" id="modal-product-price"></p>
           <p id="modal-product-description" class="text-start"></p>
           <hr>
-          <button id="modal-add-to-cart-btn" class="btn btn-lg btn-success w-100">Add to Cart</button>
+          <button id="modal-add-to-cart-btn" class="btn btn-lg btn-success w-100 btn-add-to-cart">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -259,86 +254,133 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // 1. Handle Modal Data Populating
+      const productModal = document.getElementById('productModal');
+      if (productModal) {
+        productModal.addEventListener('show.bs.modal', event => {
+          // Button/Link that triggered the modal
+          const button = event.relatedTarget;
+          
+          // Extract info from data-* attributes
+          const name = button.getAttribute('data-name');
+          const price = button.getAttribute('data-price');
+          const img = button.getAttribute('data-img');
+          const description = button.getAttribute('data-description');
+          const id = button.getAttribute('data-id'); // We need this ID
 
-    function updateCartCount() {
-      let countElem = document.getElementById('cart-count');
-      if (!countElem) {
-        countElem = document.createElement('span');
-        countElem.id = 'cart-count';
-        countElem.style.cssText = 'position: absolute; top: 5px; right: 10px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px;';
-        document.body.appendChild(countElem);
+          // Update the modal's content
+          document.getElementById('modal-product-name').textContent = name;
+          document.getElementById('modal-product-price').textContent = price;
+          document.getElementById('modal-product-img').src = img;
+          document.getElementById('modal-product-description').textContent = description;
+          
+          // Pass the ID to the Modal's Add to Cart button
+          const modalBtn = document.getElementById('modal-add-to-cart-btn');
+          modalBtn.setAttribute('data-product-id', id);
+          
+          // Reset button visual state
+          modalBtn.innerHTML = 'Add to Cart';
+          modalBtn.classList.remove('btn-outline-success');
+          modalBtn.classList.add('btn-success');
+          modalBtn.disabled = false;
+        });
       }
-      countElem.innerText = cart.length;
-    }
 
-    updateCartCount();
-
-    function addItemToCart(productName, productPrice, buttonElement) {
-      cart.push({ name: productName, price: productPrice });
-      localStorage.setItem('cart', JSON.stringify(cart));
-
-      if (buttonElement) {
-        const originalText = buttonElement.innerText;
+      // 2. Unified Add to Cart Logic
+      const isUserLoggedIn = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+      
+      const attachCartListeners = () => {
+        const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
         
-        if (buttonElement.classList.contains('btn-outline-success') || buttonElement.classList.contains('btn-success')) {
-            buttonElement.innerText = 'Added!';
-            buttonElement.classList.remove('btn-outline-success');
-            buttonElement.classList.add('btn-success');
-        }
-        
-        updateCartCount();
+        addToCartButtons.forEach(button => {
+            // Clean slate: replace element to remove old listeners
+            const newButton = button.cloneNode(true);
+            button.parentNode.replaceChild(newButton, button);
 
-        setTimeout(() => {
-          if (buttonElement.innerText === 'Added!') {
-            buttonElement.innerText = originalText;
-            buttonElement.classList.remove('btn-success');
-            buttonElement.classList.add('btn-outline-success');
-          }
-        }, 1500);
-      } else {
-        updateCartCount(); 
-      }
-    }
+            newButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // If clicking the button on the card, prevent it from opening the modal
+            e.stopPropagation(); 
 
+            if (!isUserLoggedIn) {
+                alert('Please log in to add items to your cart.');
+                window.location.href = 'login.php';
+                return;
+            }
 
-    const productModal = document.getElementById('productModal');
-    if (productModal) {
-      productModal.addEventListener('show.bs.modal', event => {
-        const cardLink = event.relatedTarget; 
+            const productId = newButton.dataset.productId;
+            
+            if(!productId) {
+                console.error("No product ID found!");
+                return;
+            }
 
-        const name = cardLink.getAttribute('data-name');
-        const price = cardLink.getAttribute('data-price');
-        const img = cardLink.getAttribute('data-img');
-        const description = cardLink.getAttribute('data-description');
+            const originalText = newButton.innerHTML;
 
-        document.getElementById('modal-product-name').textContent = name;
-        document.getElementById('modal-product-price').textContent = price;
-        document.getElementById('modal-product-img').src = img;
-        document.getElementById('modal-product-description').textContent = description;
+            newButton.innerHTML = 'Adding...';
+            newButton.disabled = true;
 
-        const modalAddToCartBtn = document.getElementById('modal-add-to-cart-btn');
-        modalAddToCartBtn.onclick = function() {
-          addItemToCart(name, price, modalAddToCartBtn);
-          const modalInstance = bootstrap.Modal.getInstance(productModal);
-          modalInstance.hide();
-        };
-      });
-    }
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-    addToCartButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault(); 
-        e.stopPropagation();
+            const formData = new FormData();
+            formData.append('product_id', productId);
 
-        const cardLink = button.closest('.product-card'); 
-        const productName = cardLink.getAttribute('data-name');
-        const productPrice = cardLink.getAttribute('data-price');
-        
-        addItemToCart(productName, productPrice, button);
-      });
+            fetch('php/add_to_cart.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    newButton.innerHTML = 'Added!';
+                    newButton.classList.remove('btn-outline-success');
+                    newButton.classList.add('btn-success');
+                    
+                    updateCartCount(data.cartCount);
+                } else {
+                    alert(data.message);
+                    newButton.innerHTML = originalText;
+                    newButton.disabled = false;
+                }
+
+                setTimeout(() => {
+                    newButton.innerHTML = 'Add to Cart';
+                    // Reset logic: if modal button, keep solid; if card button, revert to outline
+                    if(newButton.id !== 'modal-add-to-cart-btn') {
+                        newButton.classList.remove('btn-success');
+                        newButton.classList.add('btn-outline-success');
+                    }
+                    newButton.disabled = false;
+                }, 1500);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+                newButton.innerHTML = originalText;
+                newButton.disabled = false;
+            });
+            });
+        });
+      };
+
+      // Initial attachment
+      attachCartListeners();
     });
+
+    function updateCartCount(count) {
+      const cartBadge = document.getElementById('cart-count-badge');
+      if (cartBadge) {
+        if (count > 0) {
+          cartBadge.innerText = count;
+          cartBadge.style.display = 'inline-block';
+        } else {
+          cartBadge.style.display = 'none';
+        }
+      }
+    }
   </script>
 
 </body>
