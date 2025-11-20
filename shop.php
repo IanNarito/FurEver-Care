@@ -11,20 +11,7 @@
 <body>
 
   <!-- Navbar -->
-  <header class="navbar">
-    <a href="home.html" class="logo">
-      <img src="assets/img/MAINLOGO.jpg" alt="FurEver Care Logo">
-    </a>
-    <nav class="nav-links">
-      <a href="home.html">Home</a>
-      <a href="#services">Services Offered</a>
-      <a href="appointment.html">Book an Appointment</a>
-      <a href="adopt.html">Adopt a Pet</a>
-      <a href="shop.html">Shop</a>
-      <a href="signup.php">Signup</a>
-      <a href="login.php">Login</a>
-    </nav>
-  </header>
+<?php include 'partials/navbar.php'; ?>
 
   <!-- Shop by Category -->
   <section class="py-4" style="background-color: #e1efed;">
@@ -34,7 +21,7 @@
         
         <!-- Category 1 -->
         <div class="col-6 col-md-2">
-          <a href="toys.html" class="text-decoration-none text-dark">
+          <a href="toys.php" class="text-decoration-none text-dark">
             <div class="category-card bg-white p-3 shadow-sm rounded">
               <h6>Toys</h6>
             </div>
@@ -43,7 +30,7 @@
 
         <!-- Category 2 -->
         <div class="col-6 col-md-2">
-          <a href="food.html" class="text-decoration-none text-dark">
+          <a href="food.php" class="text-decoration-none text-dark">
             <div class="category-card bg-white p-3 shadow-sm rounded">
               <h6>Food</h6>
             </div>
@@ -52,7 +39,7 @@
 
         <!-- Category 3 -->
         <div class="col-6 col-md-2">
-          <a href="clothes.html" class="text-decoration-none text-dark">
+          <a href="clothes.php" class="text-decoration-none text-dark">
             <div class="category-card bg-white p-3 shadow-sm rounded">
               <h6>Accessories</h6>
             </div>
@@ -61,7 +48,7 @@
 
         <!-- Category 4 -->
         <div class="col-6 col-md-2">
-          <a href="PetHealthWellness.html" class="text-decoration-none text-dark">
+          <a href="PetHealthWellness.php" class="text-decoration-none text-dark">
             <div class="category-card bg-white p-3 shadow-sm rounded">
               <h6>Pet Health & Wellness</h6>
             </div>
