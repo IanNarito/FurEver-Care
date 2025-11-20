@@ -10,20 +10,7 @@
 <body>
 
   <!-- navbar to beh -->
-  <header class="navbar">
-    <a href="home.html" class="logo">
-      <img src="assets/img/MAINLOGO.jpg" alt="FurEver Care Logo">
-    </a>
-    <nav class="nav-links">
-      <a href="home.html">Home</a>
-      <a href="#services">Services Offered</a>
-      <a href="appointment.html">Book an Appointment</a>
-      <a href="adopt.html">Adopt a Pet</a>
-      <a href="shop.html">Shop</a>
-      <a href="signup.php">Sign up</a>
-      <a href="login.php">Login</a>
-    </nav>
-  </header>
+<?php include 'partials/navbar.php'; ?>
 
   <section class="hero-carousel">
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -64,8 +51,8 @@
     people to see animals not just as playmates, but as family members who deserve proper care, attention, and respect.
   </p>
   <div class="buttons">
-    <a href="appointment.html" class="btn-primary">Book an Appointment</a>
-    <a href="login.html" class="btn-secondary">Shop Now!</a>
+    <a href="appointment.php" class="btn-primary">Book an Appointment</a>
+    <a href="login.php" class="btn-secondary">Shop Now!</a>
   </div>
 </section>
 
@@ -76,17 +63,17 @@
       <div class="card">
         <img src="assets/img/vetcare.png" alt="vet">
         <h3>Veterinary Care</h3>
-        <a href="appointment.html" class="btn-primary">Book an Appointment</a>
+        <a href="appointment.php" class="btn-primary">Book an Appointment</a>
       </div>
       <div class="card">
         <img src="assets/img/adopt.png" alt="adopt">
         <h3>Pet Adoption</h3>
-        <a href="adopt.html" class="btn-primary">Adopt Now</a>
+        <a href="adopt.php" class="btn-primary">Adopt Now</a>
       </div>
       <div class="card">
         <img src="assets/img/shop.png" alt="shop">
         <h3>FurEver Care Shop</h3>
-        <a href="shop.html" class="btn-primary">Shop Now</a>
+        <a href="shop.php" class="btn-primary">Shop Now</a>
       </div>
     </div>
   </section>
@@ -148,7 +135,7 @@
   </div>
 
   <br>
-  <a href="adopt.html" class="btn-primary">See Pets Available for Adoption</a>
+  <a href="adopt.php" class="btn-primary">See Pets Available for Adoption</a>
 </section>
 
   <!-- ito yung form for comment/ suggestion thingy -->
@@ -209,14 +196,13 @@ function closeContactPanel() {
 
 // Handle form submission
 document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // prevent page reload
+  event.preventDefault();
   alert("Your message has been sent! 🐾");
-  // Optionally, clear the form
   this.reset();
-  // Close the panel
   closeContactPanel();
 });
 </script>
+<?php $conn->close(); ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
